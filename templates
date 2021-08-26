@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EPL 20/21 Player Data Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+</head>
+<body style="background:#232323">
+    <div class="text-light bg-dark align-text-center"></div>
+    <br>
+        <h1 style="font-size:44; color:white; text-align:center">EPL 20/21 Player Data Dashboard</h1>
+        <div style="color:white; text-align:center"><br>
+            Welcome to the unofficial data dashboard for the English Premier League 2020/2021
+            <br>Data behind the dashboard has been scraped from an excellent website called <a href="https://www.understat.com">Understat</a>
+            using code found at my git repo <a href="https://github.com/laurencelj">here</a>
+        <br><br>
+        <a style="text-align:center">Please type the name of a player below to see the relevant stats
+            <div><br>
+                <form method="POST">
+                    <input name="text">
+                    <input type="submit">
+                </form>
+            </div>
+        </a>
+
+    </div>
+    <br>
+    <hr style="border-color:white">
+    <br>
+    <h1 style="color:white; text-align:center">Headline stats &emsp;{{ headline_stats["name"] }}</h1>
+    <br>
+
+    <div class="row" style="padding=200px">
+            <div class="col-sm-2">
+                <h4 style="color:white; text-align:center">Club:<br>{{ headline_stats["club"] }}</h3>
+            </div>
+            <div class="col-sm-2">
+                <h4 style="color:white; text-align:center">Position:<br>{{ headline_stats["pos"] }}</h3>
+            </div>
+            <div class="col-sm-2">
+                <h4 style="color:white; text-align:center">Goals:<br>{{ headline_stats["goals"] }}</h3>
+            </div>
+            <div class="col-sm-2">
+                <h4 style="color:white; text-align:center">Shots:<br>{{ headline_stats["shots"] }}</h3>
+            </div>
+            <div class="col-sm-2">
+                <h4 style="color:white; text-align:center">Assists:<br>{{ headline_stats["assists"] }}</h3>
+            </div>
+            <div class="col-sm-2">
+                <h4 style="color:white; text-align:center">Key Passes:<br>{{ headline_stats["key_passes"] }}</h3>
+            </div>
+
+        </div>
+
+    <br>
+    <hr style="border-color:white">
+    <br>
+
+
+
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-xl-6" style="color:white; text-align:center">
+                <h4>Goals and xG</h4>
+                xG is a metric which is calculated to reflect how many goals you might expect a player to
+                score on average given the quality of opportunities to score that they had during a match.
+                The line shows xG whereas the bars show the goals scored.
+                <img src="/static/plots/xG_graph.png" class="img-fluid" alt="Responsive image">
+            </div>
+            <div class="col-xl-6" style="color:white; text-align:center">
+                <h4>Assists and xA</h4>
+                Similarly to xG, xA is a measure of an expected output you might expect on average from a player during a game,
+                but this time for assists rather than goals. The line shows xA overlayed with the number of assists per game.
+                <br><br><img src="/static/plots/xA_graph.png" class="img-fluid" alt="Responsive image">
+            </div>
+        </div>
+    </div>
+    <div class="chart-container" style="position: relative; height:60; width:60">
+        <canvas height=40 width=40 id="myChart"></canvas>
+    </div
+    <br><br>
+    <hr style="border-color:white">
+    <br>
+    <div style="color:white;text-align:center">All data gathered belongs to Uderstat and is used on this site for the sole purpose of demonstrating coding skills and not for any financial gain.</div>
+    <br><a> </a>
+
+</body>
+</html>
