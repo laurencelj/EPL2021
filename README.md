@@ -7,7 +7,7 @@
 3. Cleaning data and transforming to tabular form
 4. Complex joins and transformations to create new features
 5. Designing HTML templates using Jinja to create dynamic content
-6. Using Flask as a back-end to filter, transform and serve data to the dashboard
+6. Using Flask as a back-end to filter, transform and serve data and content to the dashboard
  
 ## See below for example dashboard:
 
